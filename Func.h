@@ -16,8 +16,8 @@ string AdminName="admin";
 string AdminPassword="admin";
 
 // Registro TrueDriver
-string Dui;
 string ID;
+string Dui;
 string Nombre;
 string Seguro;
 string Telefono;
@@ -39,6 +39,7 @@ int OpTaxi;
 string Partida;
 string Destino;
 int Precio;
+string dolarsign = "$";
 
 
 
@@ -107,8 +108,8 @@ void ValidacionTaxista (string ID, string Dui, string Placa);
 		cout<< "Anio del auto: ";
 		cin>>anio;
 			 
-			 
-		if (anio<2015) {  
+		cin.ignore();	 
+		if (anio>=2010 & anio<2015) {  
 			
 			validaAnio=1; 
 			Categoria = "Tradicional";
@@ -124,7 +125,7 @@ void ValidacionTaxista (string ID, string Dui, string Placa);
 		{
 		cout<<"Porfavor ingrese un año mayor a 2010."<<endl;
 		cout<<"\nAnio del auto: "<<endl;
-		cin>>anio;;
+		cin>>anio;
 		}
 		
 		ValidacionTaxista (ID, Dui, Placa);
@@ -168,7 +169,7 @@ void ValidacionTaxista (string ID, string Dui, string Placa);
 	      cout<< MensajeValidacion;
 		}
 		system("cls");
-		gotoxy(45,6);cout<<"Registro agregado con exito!"<<endl;
+		gotoxy(35,5);cout<<"Registro agregado con exito!"<<endl;
       } 
 
 
@@ -429,6 +430,8 @@ void GuardarRegistroViajes (string ID, string Partida, string Destino, int Preci
 	    	
 	        myfile <<"-----------\n";
 	        myfile.close();
+	        
+	        cout<<"Viaje registrado con exito"<<endl;
 	  	    
 	  	
 	  } else {
@@ -538,7 +541,7 @@ void ListadoTodos ()
 			t.add((RegistroViajesMatriz[A][0]));
 			t.add((RegistroViajesMatriz[A][1]));
 			t.add((RegistroViajesMatriz[A][2]));
-		    t.add("$"+(RegistroViajesMatriz[A][3]));
+		    t.add(dolarsign+(RegistroViajesMatriz[A][3]));
 			t.endOfRow();
 		
 	}

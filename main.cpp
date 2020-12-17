@@ -140,11 +140,10 @@ system("cls");
 
 string opcionPalabra;
 char opcionMenu;
-
 LecturaStorage ();
 LecturaTransaction ();
-do{
 
+do{
 
 
 system("cls");
@@ -228,29 +227,60 @@ int opcion = atoi( opcionPalabra.c_str() );
 							break;
 						}
 						case 3:{
-							system("cls");
-							cout<< "\n1. Taxi Tradicional\n"; 
-							cout<< "2. Taxi Ejecutivo\n";
-							cout<< "\nSeleccione la categoria del taxi:";
-							cin>>OpTaxi;
-							cout<< "Ingrese el punto de partida del cliente: "<<endl;
-							cin>> Partida;
-							cout<< "Ingrese el destino del cliente: "<<endl;
-							cin>> Destino;
-							cout<< "Ingrese el precio del viaje: "<<endl;
-							cin>> Precio;
-							if (OpTaxi==1) {
-								TaxiRuta.push_back(TaxiTradicional.front());
-								TaxiTradicional.erase(TaxiTradicional.begin());
-								GuardarRegistroViajes ( TaxiTradicional.front(), Partida, Destino, Precio);
-							}else if (OpTaxi==2){
-								TaxiRuta.push_back(TaxiEjecutivo.front());
-								TaxiEjecutivo.erase(TaxiEjecutivo.begin());
-								GuardarRegistroViajes (TaxiEjecutivo.front(), Partida, Destino, Precio);
-							}else {
-								cout<< "Opcion de categoria inexistente";
-							}
-							break;			
+								system("cls");
+								cout<< "\n1. Taxi Tradicional\n"<<endl; 
+								cout<< "2. Taxi Ejecutivo\n"<<endl;
+								cout<< "\nSeleccione la categoria del taxi:"<<endl;
+								cin>>OpTaxi;
+								cin.ignore();
+								cout<< "Ingrese el punto de partida del cliente: "<<endl;
+									getline(cin,Partida);
+									cout<< "Ingrese el destino del cliente: "<<endl;
+									getline(cin,Destino);
+									cout<< "Ingrese el precio del viaje: "<<endl;
+									cin>> Precio;
+							
+									cin.ignore();
+									if (OpTaxi==1) {
+										TaxiRuta.push_back(TaxiTradicional.front());
+										TaxiTradicional.erase(TaxiTradicional.begin());
+										GuardarRegistroViajes ( TaxiTradicional.front(), Partida, Destino, Precio);
+										break;
+									}else if (OpTaxi==2){
+										TaxiRuta.push_back(TaxiEjecutivo.front());
+										TaxiEjecutivo.erase(TaxiEjecutivo.begin());
+										GuardarRegistroViajes (TaxiEjecutivo.front(), Partida, Destino, Precio);
+										break;
+									}
+									
+								if(OpTaxi>=3){
+									cout<<"Opcion invalida, porfavor intente nuevamente."<<endl;
+									system("cls");
+									cout<< "\n1. Taxi Tradicional\n"<<endl; 
+									cout<< "2. Taxi Ejecutivo\n"<<endl;
+									cout<< "\nSeleccione la categoria del taxi:"<<endl;
+									cin>>OpTaxi;
+									cin.ignore();
+									cout<< "Ingrese el punto de partida del cliente: "<<endl;
+									getline(cin,Partida);
+									cout<< "Ingrese el destino del cliente: "<<endl;
+									getline(cin,Destino);
+									cout<< "Ingrese el precio del viaje: "<<endl;
+									cin>> Precio;
+							
+									cin.ignore();
+									if (OpTaxi==1) {
+										TaxiRuta.push_back(TaxiTradicional.front());
+										TaxiTradicional.erase(TaxiTradicional.begin());
+										GuardarRegistroViajes ( TaxiTradicional.front(), Partida, Destino, Precio);
+										break;
+									}else if (OpTaxi==2){
+										TaxiRuta.push_back(TaxiEjecutivo.front());
+										TaxiEjecutivo.erase(TaxiEjecutivo.begin());
+										GuardarRegistroViajes (TaxiEjecutivo.front(), Partida, Destino, Precio);
+										break;
+									}
+								}
 						}
 						case 4:{
 							system("cls");
@@ -394,29 +424,60 @@ case 2:
 							break;
 						}
 						case 3:{
-							system("cls");
-							cout<< "\n1. Taxi Tradicional\n"; 
-							cout<< "2. Taxi Ejecutivo\n";
-							cout<< "\nSeleccione la categoria del taxi:";
-							cin>>OpTaxi;
-							cout<< "Ingrese el punto de partida del cliente: ";
-							cin>> Partida;
-							cout<< "Ingrese el destino del cliente: ";
-							cin>> Destino;
-							cout<< "Ingrese el precio del viaje: ";
-							cin>> Precio;
-							if (OpTaxi==1) {
-								TaxiRuta.push_back(TaxiTradicional.front());
-								TaxiTradicional.erase(TaxiTradicional.begin());
-								GuardarRegistroViajes ( TaxiTradicional.front(), Destino, Partida, Precio);
-							}else if (OpTaxi==2){
-								TaxiRuta.push_back(TaxiEjecutivo.front());
-								TaxiEjecutivo.erase(TaxiEjecutivo.begin());
-								GuardarRegistroViajes (TaxiEjecutivo.front(), Destino, Partida, Precio);
-							}else {
-								cout<< "Opcion de categoria inexistente";
-							}
-							break;			
+								system("cls");
+								cout<< "\n1. Taxi Tradicional\n"<<endl; 
+								cout<< "2. Taxi Ejecutivo\n"<<endl;
+								cout<< "\nSeleccione la categoria del taxi:"<<endl;
+								cin>>OpTaxi;
+								cin.ignore();
+								cout<< "Ingrese el punto de partida del cliente: "<<endl;
+									getline(cin,Partida);
+									cout<< "Ingrese el destino del cliente: "<<endl;
+									getline(cin,Destino);
+									cout<< "Ingrese el precio del viaje: "<<endl;
+									cin>> Precio;
+							
+									cin.ignore();
+									if (OpTaxi==1) {
+										TaxiRuta.push_back(TaxiTradicional.front());
+										TaxiTradicional.erase(TaxiTradicional.begin());
+										GuardarRegistroViajes ( TaxiTradicional.front(), Partida, Destino, Precio);
+										break;
+									}else if (OpTaxi==2){
+										TaxiRuta.push_back(TaxiEjecutivo.front());
+										TaxiEjecutivo.erase(TaxiEjecutivo.begin());
+										GuardarRegistroViajes (TaxiEjecutivo.front(), Partida, Destino, Precio);
+										break;
+									}
+									
+								if(OpTaxi>=3){
+									cout<<"Opcion invalida, porfavor intente nuevamente."<<endl;
+									system("cls");
+									cout<< "\n1. Taxi Tradicional\n"<<endl; 
+									cout<< "2. Taxi Ejecutivo\n"<<endl;
+									cout<< "\nSeleccione la categoria del taxi:"<<endl;
+									cin>>OpTaxi;
+									cin.ignore();
+									cout<< "Ingrese el punto de partida del cliente: "<<endl;
+									getline(cin,Partida);
+									cout<< "Ingrese el destino del cliente: "<<endl;
+									getline(cin,Destino);
+									cout<< "Ingrese el precio del viaje: "<<endl;
+									cin>> Precio;
+							
+									cin.ignore();
+									if (OpTaxi==1) {
+										TaxiRuta.push_back(TaxiTradicional.front());
+										TaxiTradicional.erase(TaxiTradicional.begin());
+										GuardarRegistroViajes ( TaxiTradicional.front(), Partida, Destino, Precio);
+										break;
+									}else if (OpTaxi==2){
+										TaxiRuta.push_back(TaxiEjecutivo.front());
+										TaxiEjecutivo.erase(TaxiEjecutivo.begin());
+										GuardarRegistroViajes (TaxiEjecutivo.front(), Partida, Destino, Precio);
+										break;
+									}
+								}
 						}
 						case 4:{
 							system("cls");
@@ -425,8 +486,9 @@ case 2:
 						}
 						case 5:{
 							system("cls");
-							DisponibilidadTaxi (TaxiEjecutivo,TaxiTradicional, "Tradicional");
-							DisponibilidadTaxi (TaxiEjecutivo,TaxiTradicional, "Ejecutiva");
+//							DisponibilidadTaxi (TaxiEjecutivo,TaxiTradicional, "Tradicional");
+//							DisponibilidadTaxi (TaxiEjecutivo,TaxiTradicional, "Ejecutiva");
+							DisponibilidadTaxi (TaxiEjecutivo,TaxiTradicional, Categoria);
 							break;
 							}
 						case 6:{
@@ -434,9 +496,9 @@ case 2:
 							TaxienRuta(TaxiRuta);
 							cout<< "Ingrese el ID del taxi que desea retornar a la lista de los taxis disponibles: ";
 							cin>>ID;
-							string CategoriaTaxiRuta ="";
-							CategoriaTaxiRuta = Categoria;
-							if (CategoriaTaxiRuta == "Ejecutiva") {
+//							string CategoriaTaxiRuta ="";
+//							CategoriaTaxiRuta = Categoria;
+							if (Categoria == "Ejecutiva") {
 								TaxiEjecutivo.push_back(ID);
 								for(int i=0; i<TaxiRuta.size();i++)
                     				{
@@ -445,7 +507,7 @@ case 2:
                     					break;
 										}			
 									}
-							}else if (CategoriaTaxiRuta == "Tradicional") {
+							}else if (Categoria == "Tradicional") {
 		    					TaxiTradicional.push_back(ID);
 								for(int i=0; i<TaxiRuta.size();i++)
                     			{
